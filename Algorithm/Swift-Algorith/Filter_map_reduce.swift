@@ -25,3 +25,5 @@ print(iPhones)
 
 let canadianPrices : [Float] = myDevices.map({$0.price * 1.2})
 print(canadianPrices)
+
+let totalPrice : Float = canadianPrices.reduce(0.0,  +)
