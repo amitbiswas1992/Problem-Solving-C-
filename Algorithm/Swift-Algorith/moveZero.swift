@@ -1,6 +1,5 @@
 import Foundation
 
-
 // The following is a list of all the winners of the men's and women's Boston Marathon.
 // You are to calculate the values for the questions shown at the bottom.
 import Foundation
@@ -14,7 +13,6 @@ struct Winner {
 	let time:UInt
 	let gender:Gender
 }
-
 
 let winners = [
 	Winner(year:1966, name:"Gibb, Roberta", country:"USA", time:12100, gender:.female),
