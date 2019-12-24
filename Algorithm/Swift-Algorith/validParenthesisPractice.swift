@@ -4,6 +4,7 @@ func isValid(_ s: String) -> Bool {
 	struct Stack{
 		var characterArray: [Character] = []
 		
+		
 		func size() -> Int {
 			return characterArray.count
 		}
@@ -11,6 +12,8 @@ func isValid(_ s: String) -> Bool {
 		mutating func push(_ val: Character){
 			characterArray.append(val)
 		}
+		 
+	
 		
 		mutating func pop(){
 			if characterArray.count > 0{
