@@ -5,6 +5,9 @@ class Solution {
 		if num < 0{
 			sign = -1
 		}
+		
+		
+		var option = 6 
 		num = abs (num)
 		var result : Int = 0
 		while (num > 0){

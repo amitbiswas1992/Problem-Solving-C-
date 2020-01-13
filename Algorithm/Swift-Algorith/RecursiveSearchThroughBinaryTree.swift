@@ -13,37 +13,29 @@ class Node {
     let leftChild : Node?
     let rightChild: Node?
 
-
     init(value : Int , leftChild: Node?, rightChild: Node?) {
         self.value = value
         self.leftChild = leftChild
         self.rightChild = rightChild
     }
-
 }
-
 // Left Nodes
 let oneNode = Node(value: 1, leftChild: nil, rightChild: nil)
 let fiveNode = Node(value: 5, leftChild: oneNode, rightChild: nil)
 
-//Right nOdes
-
-
+//Right Nodes
 let elevenNode = Node(value: 11, leftChild: nil, rightChild: nil)
 let twentyNode = Node(value: 20, leftChild: nil, rightChild: nil)
 let fourteenNode = Node(value: 14, leftChild: elevenNode, rightChild: twentyNode)
 
 // Root Node
-
 let tenRootNode = Node(value: 10, leftChild: fiveNode, rightChild: fourteenNode)
-
 
 func search(node : Node? , searchValue: Int )-> Bool{
 
     if node?.value == nil {
         return false
     }
-    
     if node?.value == searchValue {
 
         return true
