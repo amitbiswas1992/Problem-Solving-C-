@@ -92,24 +92,31 @@ printLinedList(headerNode: firstNode)
 func reverseList(head: Node?)-> Node?{
     
     var currentNode = head
-    
-    var prevNode = Node?
-    var nextNode = Node?
+    var next: Node?
+    var prev: Node?
     
     while currentNode != nil {
         
-        nextNode = currentNode?.next
-        currentNode?.next = prevNode
-        prevNode = currentNode
+        next = currentNode?.next
+        currentNode?.next = prev
+        prev = currentNode
         currentNode = next
-        
-      
-        
     }
     
     
-    return prev
-}
+    
 
 let myReversedLinkedlist = reverseList(head: firstNode)
-reverseList(head: myReversedLinkedlist)
+printLinedList(headerNode: myReversedLinkedlist)
+
+
+
+
+merge(left: [Int], right: [Int])->[Int] {
+        
+        self.left = left
+        self.right = right
+    
+        
+        
+}
