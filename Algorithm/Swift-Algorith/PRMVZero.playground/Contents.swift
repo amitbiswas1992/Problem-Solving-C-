@@ -1,35 +1,44 @@
 import UIKit
 
-func moveZero(_ nums: inout [Int]) {
+class Node {
+    var  value : Int
+    var leftChild : Node?
+    var rightChild: Node?
     
-    let numeSize = nums.count
-    for i in 0..<numeSize{
-        if nums[i] == 0 {
-            var nonIndexZero = -1
-            for j in (i+1)..<numeSize{
-               if nums[j] != 0 {
-                nonIndexZero = j
-                break
-                    
-                }
-            }
-            
-            if nonIndexZero == -1 {
-                break
-            }
-            
-            while nonIndexZero > 1 {
-                nums.swapAt(nonIndexZero, nonIndexZero - 1 )
-                nonIndexZero -= 1
-            }
-        }
-        
-
+    init(value: Int, leftChild: Node?, rightChild: Node?){
+        self.value = value
+        self.leftChild = leftChild
+        self.rightChild = rightChild
     }
-
-    
 }
 
-var arr = [1,0,4,9,0,3]
+//       10
+//      /  \
+//     5   14
+//    /   /  \
+//   3   11   20
 
-moveZero(&arr)
+let threeNode = Node(value: 3, leftChild: nil, rightChild: nil)
+
+let fiveNode = Node(value: 5, leftChild: threeNode, rightChild: nil)
+let elevenNode = Node(value: 11, leftChild: nil, rightChild: nil)
+let tweentyNode = Node(value: 20, leftChild: nil, rightChild: nil)
+let fourteenNode = Node(value:14, leftChild:  elevenNode, rightChild: tweentyNode)
+let tenNode = Node(value: 10, leftChild: fiveNode, rightChild: fourteenNode)
+
+func recursiveSearch(searchValue: Int, node: Node? )-> Bool {
+    if node == nil {
+        return false
+    }
+    
+    if node?.value == searchValue {
+        return true
+    } else {
+        
+        return recursiveSearch(searchValue: searchValue, node: node?.leftChild) || recursiveSearch(searchValue: searchValue, node: node?.rightChild)
+    }
+    
+    return false
+}
+
+recursiveSearch(searchValue: 20, node: tenNode)
