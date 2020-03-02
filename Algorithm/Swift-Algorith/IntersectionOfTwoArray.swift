@@ -1,4 +1,4 @@
-class Solution {
+IS Pclass Solution {
     func intersect(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
 
      var return_array: [Int] = []
