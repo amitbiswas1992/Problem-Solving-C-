@@ -22,23 +22,44 @@ import UIKit
 
 // 1<=a[i]<=n
 
-func findDuplicate (_ nums: [Int]) -> [Int] {
+func moVeZero (_ nums: inout [Int]) {
+  
+    var g : Int = 0
     
-    var array = nums
-    var resultArray: [Int] = []
-    
-    for i in 0..<array.count {
-        var index = abs (array[i]) - 1
-        
-        if array[index] < 0 {
-            resultArray.append(index + 1 )
-        }
-        else {
-            array[index] = -array[index]
+    for i in 0..<nums.count {
+      
+        if nums[i] != 0 {
+            nums.swapAt(g, i)
+            g += 1
         }
     }
+   
     
-    return resultArray
+    
 }
 
-findDuplicate([1,2,2,1,5,4,4,8,7,7])
+var arr = [0,1,0,3,12]
+moVeZero( &arr)
+
+
+
+
+//func reverse(_ x: Int) -> Int {
+//let absolute = abs(x)
+//
+//let string = String(absolute)
+//let reversedString = String(string.reversed())
+//let res = Int32(reversedString)
+//
+//guard var result = res else
+//{
+//    return 0
+//}
+//
+//if x < 0 {
+//
+//    result = result * -1
+//}
+//return Int(result)
+//
+//}
