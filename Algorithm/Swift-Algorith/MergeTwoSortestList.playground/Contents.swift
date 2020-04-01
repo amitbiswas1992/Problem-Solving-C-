@@ -1,3 +1,4 @@
+
 import UIKit
 
 class Node {
@@ -38,7 +39,7 @@ func mergeTwoList (_ l1: Node?, _ l2: Node?) -> Node?  {
 
 mergeTwoList(firstNode, secondNode)
 
-// Insert a Nore in a linkedlist 
+// Insert a Nore in a linkedlist
 
 func insertNode(headerNode: Node?, newValue: Int) {
     var currentNode = headerNode
@@ -51,3 +52,4 @@ func insertNode(headerNode: Node?, newValue: Int) {
         currentNode = currentNode?.next
     }
 }
+
