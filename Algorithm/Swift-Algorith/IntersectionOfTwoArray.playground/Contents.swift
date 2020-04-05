@@ -9,7 +9,6 @@ class Node {
         self.next = next
     }
 }
-
 let node6 = Node(value: 6, next: nil)
 let node5 = Node(value: 5, next: node6)
 let node4 = Node(value: 2, next: node5)
@@ -38,7 +37,7 @@ func mergeTwoList (_ l1: Node?, _ l2: Node?) -> Node?  {
 
 mergeTwoList(firstNode, secondNode)
 
-// Insert a Nore in a linkedlist 
+// Insert a Nore in a linkedlist
 
 func insertNode(headerNode: Node?, newValue: Int) {
     var currentNode = headerNode
@@ -50,4 +49,34 @@ func insertNode(headerNode: Node?, newValue: Int) {
         }
         currentNode = currentNode?.next
     }
+}
+
+func singleNumber(_ nums: [Int]) -> Int {
+      var result = 0
+      
+    for i in nums {
+        result ^= i
+    }
+    return result
+}
+
+// all duplicate in Array
+
+class Solution {
+   func findDuplicates (_ nums : [Int]) -> [Int] {
+    var newArray : [Int] = []
+    var arr = nums
+   
+    for i in 0..<arr.count {
+         var index = abs(arr[i]) - 1
+        
+        if arr[index] < 0 {
+            newArray.append(index + 1)
+        }else {
+            arr[index] = -arr[index]
+        }
+        
+    }
+    return newArray
+}
 }
