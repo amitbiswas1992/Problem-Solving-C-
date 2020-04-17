@@ -26,7 +26,7 @@ public struct queue<T> {
     public init(){
         array = []
     }
-    public mutating func push(_ element: T){
+    public mutating func push(_ element: T) {
         array.append(element)
     }
     public mutating func pop(){
