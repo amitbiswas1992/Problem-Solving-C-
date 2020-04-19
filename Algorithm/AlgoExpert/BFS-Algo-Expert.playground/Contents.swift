@@ -15,8 +15,7 @@ class Node {
         
         return self
     }
-    
-    
+
     func breadthFirstSearch(array: inout [String]) -> [String] {
         
         var queue = [self]
@@ -24,11 +23,9 @@ class Node {
             var currentNode = queue.removeFirst()
             array.append(currentNode.name)
             
-            
             for child in currentNode.children  {
                 queue.append(child)
             }
-            
         }
         return array
     }
