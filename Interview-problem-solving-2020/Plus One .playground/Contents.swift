@@ -16,6 +16,8 @@ func plusOne(_ digit: [Int]) -> [Int]{
     newArray.append(1)
     newArray = newArray.reversed()
     
+  
+    
     return newArray
 }
 
