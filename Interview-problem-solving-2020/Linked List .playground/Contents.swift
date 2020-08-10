@@ -89,63 +89,78 @@ printLinkedList(headNode: firstNode)
 
 // Reversed LinkedList
 
-func reversedList(headNode: Node?) -> Node? {
+func reversedList (head: Node?)-> Node? {
+
+    var nextNode: Node?
+    var prevNode: Node?
+    var currentNode = head
     
-    var currentNode = headNode
-    
-    var next: Node?
-    var prev: Node?
-    
-    while currentNode != nil  {
-        next = currentNode?.next
-        currentNode?.next = prev
-        prev = currentNode
-        currentNode = next
-    
+    while currentNode != nil {
+        nextNode = currentNode?.next
+        currentNode?.next = prevNode
+        prevNode = currentNode
+        currentNode = nextNode
+        
+        
     }
     
-    return prev
-}
+    
+    return prevNode
+    
 
 // insert a new node
 
 
-func InsertNewNode(newValue: Int , PrevNode: Node?) {
+func insertNode (newValue: Int, prevNode: Node? ) {
     
-    if PrevNode == nil {
+    if prevNode == nil {
         return
     }
     
-    let newNode  = Node(value: newValue, next: PrevNode?.next)
-    PrevNode?.next = newNode
+    var newNode = Node(value: newValue, next: prevNode?.next)
+    
+    prevNode?.next = newNode
     
 }
+    
+    
+    // Add a new Node in to Linkedlist
+
+    //func insertNode(headerNode: Node?, newValue: Int) {
+    //    var currentNode = headerNode
+    //    var newNode = Node(value: newValue, next: nil)
+    //    while (true) {
+    //        if (currentNode?.next == nil){
+    //            currentNode?.next = newNode
+    //            break
+    //        }
+    //        currentNode = currentNode?.next
+    //    }
+    //}
+    
+    func addNode(head: Node?, newValue: Int  ) {
+        
+        var currentNode = head
+        
+        var newNode = Node(value: newValue, next: nil)
+        
+        while (true) {
+            
+            if currentNode?.next == nil {
+                currentNode?.next = newNode
+                break
+            }
+            
+            currentNode = currentNode?.next
+        }
+        
+    }
 
 
-InsertNewNode(newValue: 20, PrevNode: secondNode)
+insertNode(newValue: 20, prevNode: secondNode)
 //let l = reversedList(headNode: firstNode)
 printLinkedList(headNode: firstNode)
 
 // best time to buy and sell stock
 
-func maxProfit(_ prices: [Int]) -> Int {
-       
-    guard prices.count > 1 else  {
-           return 0
-       }
-    
-    var min = prices.first!
-       var def = 0
-       
-       for i in prices {
-           if i < min {
-               min = i
-           } else if ((i - min) > def) {
-               def = i - min
-           }
-       }
-       
-       return def
-   }
-
-maxProfit([7,1,5,3,6,4])
+}
