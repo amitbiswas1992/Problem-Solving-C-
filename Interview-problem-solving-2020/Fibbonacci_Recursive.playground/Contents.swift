@@ -14,13 +14,11 @@ import UIKit
 
 
 func fibbo(numOfSteps: Int, first: Int, second: Int) -> [Int] {
-  
     if numOfSteps == 0 {
         return []
     }
     
-    return [first + second] + fibbo(numOfSteps: numOfSteps - 1 , first: second, second: first + second)
     
+    
+    return 
 }
-
-fibbo(numOfSteps: 20, first: 0, second: 1)
