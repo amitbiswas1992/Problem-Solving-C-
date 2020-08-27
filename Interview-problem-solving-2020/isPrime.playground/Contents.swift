@@ -68,7 +68,7 @@ func countPrime(_ n : Int ) -> Int {
     
     for i in 2..<n {
         
-        guard isPrime[i] else {
+        if  isPrime[i] == false {
             continue
         }
         count += 1
@@ -78,7 +78,6 @@ func countPrime(_ n : Int ) -> Int {
             isPrime[index] = false
             index += i
         }
-        
         
     }
     
@@ -91,3 +90,6 @@ func countPrime(_ n : Int ) -> Int {
     return count
 }
 countPrime(10)
+
+
+
